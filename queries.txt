@@ -1,0 +1,17 @@
+By Akash_Magar
+
+1. db.restaurant.aggregate([{$project:{_id:0,'restaurant_id':1,'name':1,"address.zipcode":1}}])
+
+2. db.restaurant.aggregate([{$sort:{'name':1,'address':1,'cusine':1,'grades':1}}]).pretty()
+
+3. db.restaurant.find({},{_id:0}).sort({"name":1}).limit(5).pretty()
+
+4. db.restaurant.find({},{_id:0}).sort({"name":1}).skip(5).limit(5).pretty()
+
+5. db.restaurant.find({"grades.score":{$gt:90}}).pretty()
+
+6. db.restaurant.find({"grades.score":{$gt:80,$lt:100}}).pretty()
+
+7. db.restaurant.find({'name':{$regex:/^Caf/}},{_id:0,'name':1,'cuisine':1,'address.coord':1})
+
+8. db.restaurant.updateMany({"grades.grade":"B"},{$set:{"grades.$.grade":"A"}})
