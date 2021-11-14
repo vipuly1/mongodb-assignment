@@ -1,4 +1,4 @@
-By Akash_Magar
+
 
 1. db.restaurant.aggregate([{$project:{_id:0,'restaurant_id':1,'name':1,"address.zipcode":1}}])
 
